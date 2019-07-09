@@ -1,0 +1,11 @@
+<%= form_for @city do |form| %>
+  Ciudad:<%= form.text_field :ciudad %><br />
+  country_id: <%= form.text_field :country_id %><br />
+  continente: <%= form.text_field :continente %><br />
+  poblacion:<%= form.text_field :poblacion %><br />
+  Descripcion: <%= form.text_field :descripcion %><br />
+
+
+
+  <%= form.submit %>
+<% end %>

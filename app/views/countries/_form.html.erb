@@ -1,0 +1,14 @@
+<%= form_for @country do |form| %>
+  Continente:<%= form.text_field :continente %><br />
+  Pais: <%= form.text_field :pais %><br />
+  Poblacion: <%= form.text_field :poblacion %><br />
+  Costo de Vida:<%= form.text_field :vida_costo %><br />
+  Costo de Vacaciones: <%= form.text_field :vacaciones_costo %><br />
+  Moneda: <%= form.text_field :moneda %><br />
+  Descripcion:<%= form.text_area :descripcion %><br />
+  Requiere visa: <%= form.text_field :visa_requiere %><br />
+  LGTB AMIGABLE: <%= form.text_field :lgtb_amigable %><br />
+
+
+  <%= form.submit %>
+<% end %>

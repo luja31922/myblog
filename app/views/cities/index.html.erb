@@ -1,0 +1,35 @@
+<h1>Lista de Ciudades visitados</h1>
+<table class="table">
+  <thead class="thead-dark">
+
+
+
+
+      <tr>
+        <th scope="col">Ciudad</th>
+        <th scope="col">country ID</th>
+        <th scope="col">Continente</th>
+        <th scope="col">poblacion</th>
+        <th scope="col">Descripcion</th>
+
+
+    </thead>
+
+  <% @countries.each do |country| %>
+
+    <tr>
+      <td><%= city.city.capitalize %></td>
+      <td><%= city.country_id %></td>
+      <td><%= city.continente %></td>
+      <td><%= city.poblacion %></td>
+      <td><%= city.descripcion %></td>
+
+
+      <td><%= link_to 'Actualizar', edit_city_path(city), class: "btn btn-success" %></td>
+      <td><%= link_to 'Eliminar', city_path(city), method: :delete, class: "btn btn-danger" %></td>
+
+
+    <tr>
+  <% end %>
+
+  <table>

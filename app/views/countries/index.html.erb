@@ -1,0 +1,41 @@
+<h1>Lista de Paises visitados</h1>
+<table class="table">
+  <thead class="thead-dark">
+
+
+
+      <tr>
+        <th scope="col">Continente</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Poblacion</th>
+        <th scope="col">Costo de vida</th>
+        <th scope="col">Costo de vacaciones</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Requiere Visa</th>
+        <th scope="col">LGTB Amigable</th>
+
+    </thead>
+
+  <% @countries.each do |country| %>
+
+    <tr>
+      <td><%= country.continente.capitalize %></td>
+      <td><%= country.pais %></td>
+      <td><%= country.poblacion %></td>
+      <td><%= country.vida_costo %></td>
+      <td><%= country.vacaciones_costo %></td>
+      <td><%= country.moneda %></td>
+      <td><%= country.descripcion %></td>
+      <td><%= country.visa_requiere %></td>
+      <td><%= country.lgtb_amigable %></td>
+
+
+      <td><%= link_to 'Actualizar', edit_country_path(country), class: "btn btn-success" %></td>
+      <td><%= link_to 'Eliminar', country_path(country), method: :delete, class: "btn btn-danger" %></td>
+
+
+    <tr>
+  <% end %>
+
+  <table>
