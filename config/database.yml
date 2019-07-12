@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  database: database: myapp_development
+  database: myapp_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,4 +23,4 @@ test:
 production:
   <<: *default
   database: myapp_production
-    password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
