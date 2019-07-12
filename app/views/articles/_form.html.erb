@@ -1,0 +1,12 @@
+<%= form_for @article do |form| %>
+  Titulo: <%= form.text_field:title%><br />
+  ciudad_id:<%= form.select :city_id, City.all.collect {|city| [ city.ciudad, city.id.to_s ] } %><br />
+  Experienca: <%= form.text_area :experiencia%><br />
+  fecha:<%= form.date_field :fecha %><br />
+  Autor: <%= form.text_field :autor%><br />
+
+
+
+
+  <%= form.submit %>
+<% end %>

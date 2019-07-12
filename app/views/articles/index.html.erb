@@ -1,0 +1,25 @@
+
+<h1>Lista de Articulos</h1>
+
+<ol>
+<% @articles.each do |article| %>
+  <li>
+
+    <%= article.title.capitalize%>
+
+    <%= link_to 'Info', article_path(article) %>
+    <%= link_to 'Update info', edit_article_path(article) %>
+    <%= link_to 'Delete', article_path(article), method: :delete %>
+  </li>
+<% end %>
+</ol>
+
+
+
+<h3>Links</h3>
+<ul>
+<li>
+    <%= link_to 'Crear un articulo', new_article_path %>
+</li>
+
+</ul>

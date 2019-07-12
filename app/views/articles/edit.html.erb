@@ -1,0 +1,7 @@
+<h1>Update <%= @article.title.capitalize %></h1>
+<%= render 'form' %>
+
+<body>
+  <% if flash[:success] %>
+    <div class="success"><%= flash[:success] %></div>
+  <% end %>

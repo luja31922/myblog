@@ -1,2 +1,5 @@
 <h1>Crear nueva ciudad visitado</h1>
 <%= render 'form' %>
+<% if flash[:success] %>
+  <div class="success"><%= flash[:success] %></div>
+<% end %>

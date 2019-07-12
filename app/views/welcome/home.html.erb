@@ -1,1 +1,180 @@
-<h3>Mi Blog</h3>
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="text-muted" href="/users/sign_up">Subscribete</a>
+      </div>
+      <!-- /<div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#">COLOMBIANO VIAJANDO POR EL MUNDO</a>
+      </div> -->
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="text-muted" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+        </a>
+        <% if user_signed_in? %>
+          <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <a class="btn btn-sm btn-outline-secondary" href="/users/sign_in">Entrar</a>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <% if current_user && current_user.is_admin %>
+
+<%= link_to'/admin_panel' do %>
+
+
+        <img src="https://st.depositphotos.com/1742172/4644/v/950/depositphotos_46442571-stock-illustration-cartoon-padlock-and-key.jpg" alt="" width="45px">
+      <% end %>
+
+
+  <% end %>
+
+
+
+  <div class="nav-scroller py-1 mb-2">
+
+
+
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 text-muted" href="<%= articles_country_path(continente: 'Europa')%>">Europa</a>
+      <a class="p-2 text-muted" href="<%= articles_country_path(continente: 'Oceania')%>">Oceania</a>
+      <a class="p-2 text-muted" href="<%= articles_country_path(continente: 'Sureste Asiatico')%>">Sureste Asiatico</a>
+      <a class="p-2 text-muted" href="<%= articles_country_path(continente: 'India')%>">India</a>
+      <a class="p-2 text-muted" href="<%= articles_country_path(continente: 'America') %>">America</a>
+
+    </nav>
+  </div>
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark d-flex" >
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Forma facil de como estudiar en el exterior</h1>
+      <p class="lead my-3">Mi historia empezo en el 2015, cuando estaba terminando mi pregrado, nunca habia pensado la forma de vivir en el exterior por que sencillamente contaba con todo lo necesario para llevar una buena vida en mi pais.</p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continuar leyendo...</a></p>
+    </div>
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="media">
+      <%= image_tag  'sydneyprincipal', class: 'w-100' %>
+      </div>
+    </div>
+</div>
+  </div>
+
+
+
+
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Concejos</strong>
+          <h3 class="mb-0">Aprender otro idioma</h3>
+          <div class="mb-1 text-muted">Jul 09</div>
+          <p class="card-text mb-auto">Como aprender ingles de una forma divertida y rapida.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+
+<img class="irc_mi" src="https://www.modoemprendedor.com/wp-content/uploads/7-te%CC%81cnicas-para-aprender-otro-idioma-ma%CC%81s-ra%CC%81pido-que-el-promedio..png" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" width="284" height="180" style="margin-top: 0px;" data-iml="1562774884145" alt="Image result for aprendiendo otro idioma">
+
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Colombianos a viajar</strong>
+          <h3 class="mb-0">Viajando sin visas</h3>
+          <div class="mb-1 text-muted">Julio 09</div>
+          <p class="mb-auto">Conoce los lugares donde visitar sin visa y aprovecha tu pasaporte, sin tramites.</p>
+          <a href="#" class="stretched-link">Continuar leyendo</a>
+        </div>
+
+<img class="irc_mi" src="https://static.iris.net.co/semana/upload/images/2015/7/21/435653_162634_1.jpg" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" width="284" height="220" style="margin-top: 0px;" data-iml="1562775397522" alt="Image result for pasaporte colombiano">
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">
+        Entradas recientes
+      </h3>
+      <% @articles.each do |article| %>
+        <div class="blog-post">
+          <h2 class="blog-post-title"> <%= article.title.capitalize %></h2>
+          <p class="blog-post-meta"> <%= article.city.ciudad %></p>
+
+          <p> <%= article.experiencia.truncate(220) %></p>
+          <a href="<%= article_path(article) %>" class="stretched-link">Continuar leyendo</a>
+        </div><!-- /.blog-post -->
+      <% end %>
+
+
+
+      <nav class="blog-pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+      </nav>
+
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+
+        <div class="media" >
+        <%= image_tag  'andresblog', class: 'w-100 rounded-circle' %>
+
+
+
+        </div>
+
+
+        <h4 class="font-italic" >Acerca de mi</h4>
+
+
+        <p class="mb-0">Desde ya hace algunos años deje mi trabajo y todo lo que tenia en mi pais de origen el cual es Colombia, con el fin de aprender nuevas cosas, conocer nuevas culturas e integrarme a un movimiento de vieajeros independientes, en Noviembre del 2015 algunas semanas después de graduarme como Mercadologo de la Universidad Libre de Cali, empecé mi busqueda entre las opciones que tenia para irme a estudiar fuera del pais, en ese tiempo mi nivel de ingles era casi nulo, cosa que no me detuvieron para viajar, desde hace mas de 3 años estoy viviendo en el exterior, y conozco de mucha gente que como yo ama viajar, en este blog los quiero dar algunos concejos para que hagan realidad esos sueños .</p>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Archivos</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">2019</a></li>
+          <li><a href="#">2018</a></li>
+          <li><a href="#">2017</a></li>
+          <li><a href="#">2016</a></li>
+          <li><a href="#">2015</a></li>
+          <li><a href="#">2014</a></li>
+          <li><a href="#">2013</a></li>
+
+        </ol>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Encuentranos</h4>
+        <ol class="list-unstyled">
+          <li><a href="https://wwww.github.com/luja31922">GitHub</a></li>
+          <li><a href="https://wwww.instagram.com/lujanandres22/">Instagram</a></li>
+          <li><a href="https://wwww.facebook.com/luja31922">Facebook</a></li>
+
+
+
+
+
+        </ol>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main>

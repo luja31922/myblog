@@ -1,2 +1,5 @@
-<h1>Update <%= @city.pais %></h1>
+<h1>Update <%= @city.ciudad %></h1>
 <%= render 'form' %>
+<% if flash[:success] %>
+  <div class="success"><%= flash[:success] %></div>
+<% end %>

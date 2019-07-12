@@ -39,6 +39,10 @@ class CountriesController < ApplicationController
 
   end
 
+  def articles_by_country
+    @countries = Country.where(continente: params[:continente])
+  end
+
   private
 
   def country_params

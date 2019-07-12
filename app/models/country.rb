@@ -1,4 +1,4 @@
 class Country < ApplicationRecord
-has_many :articulo_paises
-has_many :cities
+has_many :cities, dependent: :destroy
+has_many :articles, through: :cities
 end

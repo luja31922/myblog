@@ -1,0 +1,14 @@
+<ol>
+<% @countries.each do |country| %>
+  <% country.articles.each do |article| %>
+    <li>
+
+      <%= article.title.capitalize%>
+
+      <%= link_to 'Info', article_path(article) %>
+      <%= link_to 'Update info', edit_article_path(article) %>
+      <%= link_to 'Delete', article_path(article), method: :delete %>
+    </li>
+  <% end %>
+<% end %>
+</ol>

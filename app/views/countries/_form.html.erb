@@ -1,13 +1,14 @@
 <%= form_for @country do |form| %>
-  Continente:<%= form.text_field :continente %><br />
+
+  Continente:<%= form.select :continente, [['Europa', 'Europa'], ['Oceania','Oceania'], ['India', 'India'], ['Sureste Asiatico','Sureste Asiatico'], ['America','America']] %><br />
   Pais: <%= form.text_field :pais %><br />
   Poblacion: <%= form.text_field :poblacion %><br />
-  Costo de Vida:<%= form.text_field :vida_costo %><br />
-  Costo de Vacaciones: <%= form.text_field :vacaciones_costo %><br />
+  Costo de Vida:<%= form.select :vida_costo, [['Alto Alto', 'Alto Alto'], ['Alto Medio','Alto Medio'], ['Medio Medio', 'Medio Medio'], ['Medio Bajo','Medio Bajo'], ['Bajo','Bajo']]  %><br />
+  Costo de Vacaciones: <%= form.select :vacaciones_costo, [['Entre 5$ y 15$ por dia', 'Entre 5$ y 15$ por dia'], ['Entre 16$ y 25$ por dia' ,'Entre 26$ y 35$ por dia'], ['Entre 36$ y 45$ por dia','Entre 36$ y 45$ por dia'], ['Mas de 46$ por dia','Mas de 46$ por dia']]%><br />
   Moneda: <%= form.text_field :moneda %><br />
   Descripcion:<%= form.text_area :descripcion %><br />
-  Requiere visa: <%= form.text_field :visa_requiere %><br />
-  LGTB AMIGABLE: <%= form.text_field :lgtb_amigable %><br />
+  Requiere visa: <%= form.text_area :visa_requiere %><br />
+  LGTB AMIGABLE: <%= form.text_area :lgtb_amigable %><br />
 
 
   <%= form.submit %>

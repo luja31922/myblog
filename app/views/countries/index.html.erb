@@ -14,6 +14,9 @@
         <th scope="col">Descripcion</th>
         <th scope="col">Requiere Visa</th>
         <th scope="col">LGTB Amigable</th>
+        <th scope="col">Funcionalidades</th>
+
+
 
     </thead>
 
@@ -29,10 +32,11 @@
       <td><%= country.descripcion %></td>
       <td><%= country.visa_requiere %></td>
       <td><%= country.lgtb_amigable %></td>
+      <td><%= link_to 'Actualizar', edit_country_path(country), class: "d-block m-1 btn btn-info" %>
+      <%= link_to 'Cities', country_cities_path(country), class: "d-block m-1 btn btn-success" %>
+      <%= link_to 'Eliminar', country_path(country), method: :delete, class: "d-block m-1 btn btn-danger" %>
+      <%= link_to 'Agregar Ciudad', new_country_city_path(country), class: "d-block m-1  btn btn-primary"%></td>
 
-
-      <td><%= link_to 'Actualizar', edit_country_path(country), class: "btn btn-success" %></td>
-      <td><%= link_to 'Eliminar', country_path(country), method: :delete, class: "btn btn-danger" %></td>
 
 
     <tr>
